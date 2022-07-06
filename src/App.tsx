@@ -1,25 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { Button } from '@mui/material';
+
+const Wrapper = styled.div`
+  background-color: #dbb0b0;
+  color: yellow;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`
+
+const StyledButton = styled(Button)`
+  && {
+    background: red;
+  }
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      Test styled components
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
+      <StyledButton variant="contained">Test materialui + styled components</StyledButton>
+    </Wrapper>
+
   );
 }
 
